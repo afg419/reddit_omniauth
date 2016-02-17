@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   get '/reddit/auth', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resource :private_message, only: [:show]
+  resources :private_messages, only: [:index]
 end
-	

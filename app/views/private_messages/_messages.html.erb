@@ -1,6 +1,10 @@
 <% messages.each do |message| %>
-  <h3><%= message.author %></h3>
-  <p>
+  <h3>Sent by: <%= message.author.capitalize %></h3>
+  <li>
     <%= message.body %>
-  </p>
+  </li>
+<% end %>
+
+<% if messages.length == 0 %>
+  <h3>Hmmm seems you don't have any mail in this box</h3>
 <% end %>

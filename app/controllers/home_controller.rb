@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @sub = "all"
   end
 
-  def show
+  def index
     if current_user
       @all = Post.all("all", "top", current_access_token)
     else

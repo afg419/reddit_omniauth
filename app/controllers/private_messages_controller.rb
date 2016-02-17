@@ -10,4 +10,11 @@ class PrivateMessagesController < ApplicationController
       @from_log_in_nav = true
     end
   end
+
+  def new
+    binding.pry
+    respond_to do |format|
+      format.js
+    end
+  end
 end

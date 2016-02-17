@@ -3,14 +3,12 @@
   <h3 id="sent" class="hide">sent</h3>
 </div>
 
-<div id="aarons-messages">
+<ul id="aarons-messages">
   <%=  render partial: 'messages.html.erb', locals: {messages: @messages} %>
-</div>
-
-<div id="jordans-messages">
-
-</div>
-
-<ul id="ajax-messages">
-
 </ul>
+
+<ul id="jordans-messages">
+</ul>
+
+<div id="new-message">
+</div>

@@ -1,11 +1,7 @@
 <ul class="nav nav-tabs">
   <li></li>
-  <li role="presentation" class="active"><%= link_to "Sent", private_messages_path(mail: "inbox"), :remote => true %></li>
-  <li role="presentation"><%= link_to "Sent", private_messages_path(mail: "sent"), :remote => true %></li>
-  <li role="presentation"><a href="#">send a private message</a></li>
+  <li role="presentation" class="active"><%= link_to "Inbox", private_messages_path(mail: "inbox"), :remote => true %></li>
+  <li role="presentation"> <%= link_to "Sent", private_messages_path(mail: "sent"), :remote => true %></li>
+  <li role="presentation"> <%= link_to "Send a private message", new_private_message_path, :remote => true %> </li>
   <li role="presentation"> <%= link_to "Back to home page", root_path %></li>
 </ul>
-
-<!-- <script type="text/javascript">var token = "<%=current_access_token%>"</script> -->
-
-<%= render 'pm_nav_js' %>

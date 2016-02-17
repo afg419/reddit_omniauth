@@ -1,6 +1,15 @@
-<% @messages.each do |message| %>
+<div id="header">
+  <h3 id="inbox">inbox</h3>
+  <h3 id="sent" class="hide">sent</h3>
+</div>
+
+<!-- <% @messages.each do |message| %>
   <h3><%= message.author %></h3>
   <p>
     <%= message.body %>
   </p>
-<% end %>
+<% end %> -->
+
+<ul id="ajax-messages">
+
+</ul>

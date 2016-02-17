@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user,
                 :current_username,
                 :user_info_from_api,
-                :reddit_service
+                :reddit_service,
+                :current_access_token
 
   def reddit_service
     @service ||= RedditService.new

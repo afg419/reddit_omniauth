@@ -11,9 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160217005900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "token"
+    t.string   "refresh_token"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "link_karma"
+    t.string   "name"
+    t.integer  "comment_karma"
+    t.string   "reddit_id"
+    t.integer  "inbox_count"
+    t.integer  "gold_creddits"
+  end
 
 end

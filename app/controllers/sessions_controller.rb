@@ -2,13 +2,12 @@ class SessionsController < ApplicationController
   def create
     if params["code"]
       reply = JSON.parse(o_authenticate_with_reddit(params["code"]))
-      binding.pry
       if session[:user_token] = reply["access_token"]
-        # @user = User.find_or_create_by_auth(reply)
+        User.find_or_create_by_auth(user_info_from_api.merge(reply))
         flash[:notification] = "Successfully logged in!"
         redirect_to root_path
       else
-        flash[:error] = "Issue with logging in."
+        flash[:error] = "Issue with Logging In."
         redirect_to root_path
       end
     else

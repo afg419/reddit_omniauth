@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   def self.find_or_create_by_auth(reply)
     user = User.find_or_create_by(token: reply["access_token"])
     user.refresh_token = reply["refresh_token"]
@@ -10,7 +9,6 @@ class User < ActiveRecord::Base
     user.inbox_count = reply["inbox_count"]
     user.gold_creddits = reply["gold_creddits"]
     user.save
-    binding.pry
     user
   end
 end

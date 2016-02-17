@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-    binding.pry
     if params["code"]
       reply = JSON.parse(reddit_service.o_authenticate_with_reddit(params["code"]))
       if session[:user_token] = reply["access_token"]
@@ -17,6 +16,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:user_token] = nil
+    redirect_to root_path
+  end
 
   # {"access_token"=>"52329580-ZsuYfh6N0osPtqeIdnG8Lk5oeII",
   #  "token_type"=>"bearer",

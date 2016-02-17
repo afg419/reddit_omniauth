@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     if params["code"]
-      reply = JSON.parse(o_authenticate_with_reddit(params["code"]))
+      reply = JSON.parse(reddit_service.o_authenticate_with_reddit(params["code"]))
       if session[:user_token] = reply["access_token"]
         User.find_or_create_by_auth(user_info_from_api.merge(reply))
         flash[:notification] = "Successfully logged in!"

@@ -11,20 +11,20 @@ RSpec.feature "User Login and Logout", type: :feature do
          "controller"=>"sessions",
          "action"=>"create"}
 
-    # VCR.use_cassette 'user_token/api_response' do
-    #   uri = URI('https://www.reddit.com/api/v1/access_token')
-    #   req = Net::HTTP::Post.new(uri)
-    #   req.basic_auth ENV["app_id"], ENV["reddit_secret_key"]
-    #   req.body = "grant_type=authorization_code&code=#{code}&redirect_uri=http://localhost:3000/reddit/auth"
-    #
-    #   res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") {|http|
-    #     http.request(req)
-    #   }
-    #   res.body
-    #
-    #   response = Net::HTTP.get_response(URI("https://www.reddit.com/api/v1/authorize?client_id=_wQqSTYHc9pGZQ&response_type=code&state=RANDOM1009&redirect_uri=http://localhost:3000/reddit/auth&duration=permanent&scope=identity history flair read"))
-    #   binding.pry
-    # end
+    VCR.use_cassette 'user_token/api_response' do
+      uri = URI('https://www.reddit.com/api/v1/access_token')
+      req = Net::HTTP::Post.new(uri)
+      req.basic_auth ENV["app_id"], ENV["reddit_secret_key"]
+      req.body = "grant_type=authorization_code&code=#{code}&redirect_uri=http://localhost:3000/reddit/auth"
+
+      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") {|http|
+        http.request(req)
+      }
+      res.body
+
+      response = Net::HTTP.get_response(URI("https://www.reddit.com/api/v1/authorize?client_id=_wQqSTYHc9pGZQ&response_type=code&state=RANDOM1009&redirect_uri=http://localhost:3000/reddit/auth&duration=permanent&scope=identity history flair read"))
+      binding.pry
+    end
 
 
     # {"state"=>"RANDOM6299",

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
     user.inbox_count = reply["inbox_count"]
     user.gold_creddits = reply["gold_creddits"]
     user.save
+    binding.pry
     user
   end
 end

@@ -7,9 +7,7 @@ class HomeController < ApplicationController
 
   def show
     if current_user
-      @all = JSON.parse(reddit_service.get(url: "https://oauth.reddit.com/",
-                               path: "r/#{subreddit_all}/top",
-                              token: current_access_token))
+      @all = Post.all("all", "top", current_access_token)
     else
       @all = Post.all_unauth("all", "top")
     end

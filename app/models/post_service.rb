@@ -6,10 +6,11 @@ class PostService
     @reddit_service = RedditService.new
   end
 
-  def posts(subreddit, filter_by = "top")
-    JSON.parse(reddit_service.get(url: "https://oauth.reddit.com/",
+  def posts(subreddit, token, filter_by = "top")
+    posts = JSON.parse(reddit_service.get(url: "https://oauth.reddit.com/",
                              path: "r/#{subreddit}/#{filter_by}",
                             token: current_access_token))
+    posts["data"]["children"]
   end
 
   def unauth_posts(subreddit, filter_by)

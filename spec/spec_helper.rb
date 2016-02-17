@@ -20,6 +20,26 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+
+  def user_clicks_accept
+    {
+      "state"=>"RANDOM3",
+      "code"=>"nAUTmYMONGF9wa8l6ugKdXtI7u4",
+      "controller"=>"sessions",
+      "action"=>"create"
+    }
+  end
+
+  def user_clicks_deny
+    {
+      "state"=>"RANDOM3364",
+      "error"=>"access_denied",
+      "controller"=>"sessions",
+      "action"=>"create"
+    }
+  end
+
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

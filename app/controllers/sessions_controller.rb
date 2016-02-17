@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def create
+    binding.pry
     if params["code"]
       reply = JSON.parse(reddit_service.o_authenticate_with_reddit(params["code"]))
       if session[:user_token] = reply["access_token"]

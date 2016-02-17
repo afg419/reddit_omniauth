@@ -13,10 +13,16 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by(token: session[:user_token]) if session[:user_token]
+    @current_user ||= User.find_by(name: session[:name]) if session[:name]
+  end
+
+  def current_access_token
+    session[:user_token]
   end
 
   def user_info_from_api
-    JSON.parse(reddit_service.get(path: "me", token: session[:user_token])) if session[:user_token]
+    if current_access_token
+      JSON.parse(reddit_service.get(path: "me", token: current_access_token))
+    end
   end
 end

@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
     if params["code"]
       reply = JSON.parse(reddit_service.o_authenticate_with_reddit(params["code"]))
       if session[:user_token] = reply["access_token"]
-        User.find_or_create_by_auth(user_info_from_api.merge(reply))
+        user = User.find_or_create_by_auth(user_info_from_api.merge(reply))
+        session[:name] = user.name
         flash[:notification] = "Successfully logged in!"
         redirect_to root_path
       else
@@ -20,6 +21,8 @@ class SessionsController < ApplicationController
     session[:user_token] = nil
     redirect_to root_path
   end
+
+  #{}"52329580-NxrIywisavBXUH_GMnugOhKOuSc"
 
   # {"access_token"=>"52329580-ZsuYfh6N0osPtqeIdnG8Lk5oeII",
   #  "token_type"=>"bearer",

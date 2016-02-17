@@ -1,18 +1,18 @@
 <h1>REDDIT CLONE AGHHHHH</h1>
 
-<% @all["data"]["children"].each do |post| %>
-  <h3><%= post["data"]["title"] %></h3>
-  <h4>UpVotes: <%= post["data"]["ups"] %></h4>
+<% @all.each do |post| %>
+  <h3><%= post.title %></h3>
+  <h4>UpVotes: <%= post.ups %></h4>
   <p>
-    submitted by <%= post["data"]["author"] %> to   <%= post["data"]["subreddit"] %>
+    submitted by <%= post.author %> to   <%= post.subreddit %>
   </p>
   <p>
-    <span><%= post["data"]["num_comments"] %></span>
+    <span><%= post.num_comments %></span>
     <span>share</span>
     <span>save</span>
     <span>hide</span>
     <span>report</span>
   </p>
-  <% post["data"]["permalink"] %><br>
-  <% post["data"]["url"] %><br>
+  <% post.permalink %><br>
+  <% post.url %><br>
 <% end %>

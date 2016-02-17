@@ -8,17 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body>
 
-<ul class="nav nav-tabs">
-  <li> <%= @sub.capitalize %> </li>
-  <li role="presentation" class="active"><a href="#">Hot</a></li>
-  <li role="presentation"><a href="#">New</a></li>
-  <li role="presentation"><a href="#">Rising</a></li>
-  <li role="presentation"><a href="#">Controversial</a></li>
-  <li role="presentation"><a href="#">Top</a></li>
-  <li role="presentation"><a href="#">Gilded</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><%= login_or_logout_link %></li>
-</ul>
+<% if current_user %>
+  <%= render './shared/logged_in_nav.html.erb' %>
+<% else %>
+  <%= render './shared/logged_out_nav.html.erb' %>
+<% end %>
 
 <% flash.each do |key,message|  %>
   <p>

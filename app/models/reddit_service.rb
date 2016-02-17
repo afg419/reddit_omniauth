@@ -8,8 +8,8 @@ class RedditService
     res.body
   end
 
-  def unauth_get_json(url: "http://www.reddit.com/.json")
-    uri = URI(url)
+  def unauth_get_json(url: "http://www.reddit.com/", path: "")
+    uri = URI(url + path + ".json")
     req = Net::HTTP::Get.new(uri)
     res = Net::HTTP.start(uri.hostname, uri.port) {|http|
       http.request(req)

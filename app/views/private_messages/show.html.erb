@@ -1,0 +1,6 @@
+<% @messages["data"]["children"].each do |message| %>
+  <h3><%= message["data"]["author"] %></h3>
+  <p>
+    <%= message["data"]["body"] %>
+  </p>
+<% end %>

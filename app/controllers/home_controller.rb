@@ -9,9 +9,15 @@ class HomeController < ApplicationController
     if current_user
       @all = JSON.parse(reddit_service.get(url: "https://oauth.reddit.com/",
                                path: "r/#{subreddit_all}/top",
-                              token: current_user.token))
+                              token: current_access_token))
     else
-      @all = JSON.parse(reddit_service.unauth_get_json)
+      @all = Post.all_unauth("all", "top")
     end
   end
 end
+
+# session => "52329580-SVlzbdAk6uMw6WkMXS2b2CBPDOk"
+# user => "52329580-n-rptBNZJdaYH3hRjiElfPYKKFY"
+
+# session => "52329580-Eca8_VERJZecaP9fewWbP7B7hYw"
+# user =>"52329580-8fsjIy4UVrxoIY2xkT5bpdm21d0"

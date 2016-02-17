@@ -8,7 +8,7 @@ class RedditService
     res.body
   end
 
-  # def unauth_get(url: "https://www.reddit.com/", path: path)
+  # def unauth_get(url: "https://www.reddit.com/", path: path, t)
   #   uri = URI(url + path + "/")
   #   req = Net::HTTP::Get.new(uri)
   #   res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") {|http|

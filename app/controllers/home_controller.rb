@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
   def show
-    @all = reddit_service.unauth_get(path: 'all/top')
-    binding.pry
+    if current_user
+      @all = JSON.parse(reddit_service.get(url: "https://oauth.reddit.com/",
+                               path: 'r/all/top',
+                              token: current_user.token))
+    end
   end
 end
+
+# GET [/r/subreddit]/api/flairlist

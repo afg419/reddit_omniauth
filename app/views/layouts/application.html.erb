@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>RedditOmniauth</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1"></head>
-<body>
 
-<% if current_user %>
-  <%= render './shared/logged_in_nav.html.erb' %>
-<% else %>
-  <%= render './shared/logged_out_nav.html.erb' %>
-<% end %>
+  <body>
 
-<% flash.each do |key,message|  %>
-  <p>
-    <%= key %>: <%= message %>
-  </p>
-<% end %>
+    <%= render current_navbar[params[:controller]][current_user?] %>
 
-<%= yield %>
+    <% flash.each do |key,message|  %>
+      <p>
+        <%= key %>: <%= message %>
+      </p>
+    <% end %>
 
-</body>
+    <%= yield %>
+  </body>
 </html>

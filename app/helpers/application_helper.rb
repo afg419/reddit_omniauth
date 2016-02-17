@@ -8,4 +8,15 @@ module ApplicationHelper
     end
   end
 
+  def current_user?
+    !!current_user
+  end
+
+  def current_navbar
+    {
+      "home" => {true => "logged_in_nav.html.erb", false => "logged_out_nav.html.erb"},
+      "private_messages" => {true => "pm_nav.html.erb"}
+    }
+  end
+
 end

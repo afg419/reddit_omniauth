@@ -9,14 +9,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'pg'
+gem 'typhoeus'
+
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'launchy'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'vcr'
 end
 
 group :development do

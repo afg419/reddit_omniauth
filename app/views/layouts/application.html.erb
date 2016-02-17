@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body>
 
+<% flash.each do |key,message|  %>
+<p>
+  <%= key %>: <%= message %>
+</p>
+<% end %>
 <%= yield %>
 
 </body>

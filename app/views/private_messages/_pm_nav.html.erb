@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs">
   <li></li>
-  <li role="presentation" class="pm-inbox active"><a href="#">inbox</a></li>
-  <li role="presentation"><%= link_to "Sent", '#', class: "pm-sent"%></li>
+  <li role="presentation" class="active"><%= link_to "Sent", private_messages_path(mail: "inbox"), :remote => true %></li>
+  <li role="presentation"><%= link_to "Sent", private_messages_path(mail: "sent"), :remote => true %></li>
   <li role="presentation"><a href="#">send a private message</a></li>
   <li role="presentation"> <%= link_to "Back to home page", root_path %></li>
 </ul>

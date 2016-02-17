@@ -3,12 +3,13 @@
   <h3 id="sent" class="hide">sent</h3>
 </div>
 
-<!-- <% @messages.each do |message| %>
-  <h3><%= message.author %></h3>
-  <p>
-    <%= message.body %>
-  </p>
-<% end %> -->
+<div id="aarons-messages">
+  <%=  render partial: 'messages.html.erb', locals: {messages: @messages} %>
+</div>
+
+<div id="jordans-messages">
+
+</div>
 
 <ul id="ajax-messages">
 

@@ -8,6 +8,17 @@ class RedditService
     res.body
   end
 
+  # def unauth_get(url: "https://www.reddit.com/", path: path)
+  #   uri = URI(url + path + "/")
+  #   req = Net::HTTP::Get.new(uri)
+  #   res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") {|http|
+  #     http.request(req)
+  #   }
+  #   binding.pry
+  #   res.body
+  # end
+
+
   def o_authenticate_with_reddit(code)
     uri = URI('https://www.reddit.com/api/v1/access_token')
     req = Net::HTTP::Post.new(uri)

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def show
-    # @rand = rand(0..10000)
+    @all = reddit_service.unauth_get(path: 'all/top')
+    binding.pry
   end
 end

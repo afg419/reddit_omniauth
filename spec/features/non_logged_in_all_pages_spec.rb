@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "LoggedInAllPages", type: :feature do
-  scenario "A logged in user sees their /all page" do
+RSpec.feature "NonLoggedInAllPages", type: :feature do
+  scenario "root page displays default all page" do
     visit root_path
     expect(page).to have_content("All")
     expect(page).to have_content("Hot")

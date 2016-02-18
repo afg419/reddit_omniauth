@@ -3,12 +3,12 @@ $(document).ready(function(){
     $(this).tab('show');
   })
 
-  get_posts('.unlog-top','all', 'top');
-  get_posts('.unlog-new','all', 'new');
-  get_posts('.unlog-rising','all', 'rising');
-  get_posts('.unlog-controversial','all', 'controversial');
-  get_posts('.unlog-hot','all', 'hot');
-  get_posts('.unlog-gilded','all', 'gilded');
+  get_posts('.nav-top','all', 'top');
+  get_posts('.nav-new','all', 'new');
+  get_posts('.nav-rising','all', 'rising');
+  get_posts('.nav-controversial','all', 'controversial');
+  get_posts('.nav-hot','all', 'hot');
+  get_posts('.nav-gilded','all', 'gilded');
 })
 
 var get_posts = function(class_name, subreddit ,filter_by){
@@ -38,7 +38,7 @@ var render_to_posts_page = function(json_reply, title){
       "<div class='jumbotron'>" +
       "<h3>" + post.title + "</h3>" +
       "<h4>Upvotes: " + post.ups + "</h4>" +
-      "<p>submitted by" + post.author + "to" + post.subreddit +"</p>" +
+      "<p>submitted by" + post.author + "to r/" + post.subreddit +"</p>" +
       "<p>Comments: " + post.num_comments + "</p>" +
       "</div>"
     )

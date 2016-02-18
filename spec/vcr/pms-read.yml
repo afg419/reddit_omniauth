@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://oauth.reddit.com/message/inbox/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - bearer 52329580-tZn8AIcl6sr2jjrmW2euJ75rODk
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - oauth.reddit.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 18 Feb 2016 17:30:52 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1292'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3d3f0bdea382a8a7cdb1d577e1069ba41455816652; expires=Fri, 17-Feb-17
+        17:30:52 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Expires:
+      - "-1"
+      Cache-Control:
+      - max-age=0, must-revalidate
+      - private, s-maxage=0, max-age=0, must-revalidate
+      X-Ratelimit-Remaining:
+      - '595.0'
+      X-Ratelimit-Used:
+      - '5'
+      X-Ratelimit-Reset:
+      - '548'
+      X-Reddit-Tracking:
+      - https://pixel.redditmedia.com/pixel/of_destiny.png?v=l%2Fa6OVd8PjyUGb05JudQuj4ahAHnjaG5WI5Sn2k2cT1CW7Ktj%2F4%2B0LXPLdbwsB58ZfvgWYhiHLMJ4bZ44qMofdilaaRdkRHr
+      Vary:
+      - accept-encoding
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Ray:
+      - 276b765c4d4f253d-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"kind": "Listing", "data": {"modhash": null, "children": [{"kind":
+        "t4", "data": {"body": "Hello!\r\n\r\nHere\u2019s some information to get
+        you started with reddit.  \r\n\r\n### The key to enjoying reddit is finding
+        the right communities to follow \r\nThey say there\u2019s a subreddit for
+        everything. [Type in an interest](https://www.reddit.com/subreddits?ref=welcomepm)
+        and Snoo (our time traveling alien mascot) will help find the right subreddit
+        for you! \r\n\r\n### How it all works  \r\n\r\n1. Users post to communities,
+        also known as subreddits. \r\n2. Other users vote and comment on those posts.
+        \r\n3. Based on those votes, the best posts rise to the top for all to enjoy.\r\n\r\nUsers
+        who post or comment earn karma points when their content gets voted up, or
+        upvoted. \r\n\r\nAs you\u2019re participating, be aware that each subreddit
+        has its own unique personality and rules, usually found in their sidebar.
+        \r\nThose are the basics! Once you poke around the site a bit, please feel
+        free to check out a more in-depth explanation about [what reddit is and how
+        it works](http://www.redditblog.com/2014/07/how-reddit-works.html). Happy
+        redditing! :)\r\n\r\n### By the way...\r\n\r\n* [This is our Content Policy](https://www.reddit.com/help/contentpolicy?ref=welcomepm).
+        These are the rules you need to follow to participate on Reddit.\r\n* We strongly
+        recommend that you verify an email address with your account, so that you
+        can reset your password by email. There is no other way to recover a forgotten
+        password. You can [update your email and password here](https://www.reddit.com/prefs/update/?ref=welcomepm).",
+        "was_comment": false, "first_message": null, "name": "t4_4z4obt", "first_message_name":
+        null, "created": 1455684348.0, "dest": "aapirails", "author": "reddit", "created_utc":
+        1455655548.0, "body_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Hello!&lt;/p&gt;\n\n&lt;p&gt;Here\u2019s
+        some information to get you started with reddit.  &lt;/p&gt;\n\n&lt;h3&gt;The
+        key to enjoying reddit is finding the right communities to follow&lt;/h3&gt;\n\n&lt;p&gt;They
+        say there\u2019s a subreddit for everything. &lt;a href=\"https://www.reddit.com/subreddits?ref=welcomepm\"&gt;Type
+        in an interest&lt;/a&gt; and Snoo (our time traveling alien mascot) will help
+        find the right subreddit for you! &lt;/p&gt;\n\n&lt;h3&gt;How it all works&lt;/h3&gt;\n\n&lt;ol&gt;\n&lt;li&gt;Users
+        post to communities, also known as subreddits. &lt;/li&gt;\n&lt;li&gt;Other
+        users vote and comment on those posts. &lt;/li&gt;\n&lt;li&gt;Based on those
+        votes, the best posts rise to the top for all to enjoy.&lt;/li&gt;\n&lt;/ol&gt;\n\n&lt;p&gt;Users
+        who post or comment earn karma points when their content gets voted up, or
+        upvoted. &lt;/p&gt;\n\n&lt;p&gt;As you\u2019re participating, be aware that
+        each subreddit has its own unique personality and rules, usually found in
+        their sidebar. \nThose are the basics! Once you poke around the site a bit,
+        please feel free to check out a more in-depth explanation about &lt;a href=\"http://www.redditblog.com/2014/07/how-reddit-works.html\"&gt;what
+        reddit is and how it works&lt;/a&gt;. Happy redditing! :)&lt;/p&gt;\n\n&lt;h3&gt;By
+        the way...&lt;/h3&gt;\n\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\"https://www.reddit.com/help/contentpolicy?ref=welcomepm\"&gt;This
+        is our Content Policy&lt;/a&gt;. These are the rules you need to follow to
+        participate on Reddit.&lt;/li&gt;\n&lt;li&gt;We strongly recommend that you
+        verify an email address with your account, so that you can reset your password
+        by email. There is no other way to recover a forgotten password. You can &lt;a
+        href=\"https://www.reddit.com/prefs/update/?ref=welcomepm\"&gt;update your
+        email and password here&lt;/a&gt;.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "subreddit": null, "parent_id": null, "context": "", "replies":
+        "", "id": "4z4obt", "new": false, "distinguished": "admin", "subject": "Hello,
+        /u/aapirails! Welcome to reddit!"}}], "after": null, "before": null}}'
+    http_version: 
+  recorded_at: Thu, 18 Feb 2016 17:30:52 GMT
+recorded_with: VCR 3.0.1

@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://oauth.reddit.com/message/sent/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - bearer 52329580-tZn8AIcl6sr2jjrmW2euJ75rODk
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - oauth.reddit.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 18 Feb 2016 17:30:52 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d76e39222f7a54116a9673fa97fe9570d1455816652; expires=Fri, 17-Feb-17
+        17:30:52 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Expires:
+      - "-1"
+      Cache-Control:
+      - max-age=0, must-revalidate
+      - private, s-maxage=0, max-age=0, must-revalidate
+      X-Ratelimit-Remaining:
+      - '594.0'
+      X-Ratelimit-Used:
+      - '6'
+      X-Ratelimit-Reset:
+      - '548'
+      X-Reddit-Tracking:
+      - https://pixel.redditmedia.com/pixel/of_destiny.png?v=VEkNdnj%2FTmEYxxerdfNma418K7lqb0JrgyX1aC%2BXs0XYrYths%2Fqhs6HFm4D7s7u%2BAV0u0pyMzUD0UMmxROu8WlBgXnwLz0ZD
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Ray:
+      - 276b765dc91c10cf-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"kind": "Listing", "data": {"modhash": null, "children": [], "after":
+        null, "before": null}}'
+    http_version: 
+  recorded_at: Thu, 18 Feb 2016 17:30:52 GMT
+recorded_with: VCR 3.0.1

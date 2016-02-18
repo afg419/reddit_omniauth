@@ -1,5 +1,8 @@
 # require 'rails_helper'
 #
+
+# describe ""
+
 # RSpec.feature "CreatesDojos", type: :feature do
 #   scenario "first time user creates their dojo" do
 #     visit root_path

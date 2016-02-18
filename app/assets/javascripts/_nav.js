@@ -9,4 +9,5 @@ $(document).ready(function(){
   get_posts('.nav-controversial','all', 'controversial');
   get_posts('.nav-hot','all', 'hot');
   get_posts('.nav-gilded','all', 'gilded');
+  get_posts_from_current_subreddit();
 })

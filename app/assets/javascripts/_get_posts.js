@@ -7,6 +7,7 @@ var get_posts = function(class_name, subreddit ,filter_by){
          render_to_posts_page(msg, subreddit + "/" + filter_by)
          cast_vote('.upvote');
          cast_vote('.downvote');
+         color_all_votes();
        },
        error: function(something, msg){
           alert(msg)
@@ -15,8 +16,23 @@ var get_posts = function(class_name, subreddit ,filter_by){
   })
 }
 
+var get_posts_from_current_subreddit = function(){
+  $.ajax({
+     type:"GET",
+     url: "/api/v1/posts/r/" + "render" + "/" + "posts",
+     success: function(msg) {
+       render_to_posts_page(msg, "hey" + "/" + "works")
+       cast_vote('.upvote');
+       cast_vote('.downvote');
+       color_all_votes();
+     },
+     error: function(something, msg){
+        alert(msg)
+     }
+  });
+}
+
 var render_to_posts_page = function(json_reply, title){
-  $("#standard-posts").empty();
   $("#json-posts").empty();
   $("#json-posts").append(
     "<h2>" + title + "</h2>"

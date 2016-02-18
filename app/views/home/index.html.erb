@@ -1,40 +1,4 @@
 <h1 class="center">REDDIT CLONE AGHHHHH</h1>
 
-<div id="standard-posts" class="container">
-  <h2> <%= selected_subreddit %>/<%= selected_filter %> </h2>
-  <% @all.each do |post| %>
-    <div class="jumbotron">
-      <h3><%= post.title %></h3>
-      <h4><a class="upvote <%= post.id %> btn">^^^</a> <a class="downvote <%= post.id %> btn">vvv</a> UpVotes: <%= post.ups %></h4>
-      <p>
-        submitted by <%= post.author %> to r/<%= post.subreddit %>
-      </p>
-      <p>
-        <span>Comments: <%= post.num_comments %></span>
-      </p>
-      <% post.permalink %><br>
-      <% post.url %><br>
-    </div>
-  <% end %>
-</div>
-
-<!-- <script type="text/javascript">
-render_to_posts_page( "<%= JSON.parse(@all.to_json) %>", "<%= selected_subreddit %>/<%= selected_filter %>")
-</script> -->
-
-
-<!-- POST /api/vote
-
-Cast a vote on a thing.
-  id should be the fullname of the Link or Comment to vote on.
-  dir indicates the direction of the vote. Voting 1 is an upvote, -1 is a downvote, and 0 is           equivalent to "un-voting" by clicking again on a highlighted arrow.
- -->
-
-
 <div id="json-posts" class="container">
-
 </div>
-
-<script type="text/javascript">
-  color_votes()
-</script>

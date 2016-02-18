@@ -1,7 +1,9 @@
 class Api::PostsController < ApplicationController
   def index
-    session[:selected_subreddit] = params[:subreddit]
-    session[:selected_filter] = params[:filter_by]
+    unless params[:subreddit] == "render"
+      session[:selected_subreddit] = params[:subreddit]
+      session[:selected_filter] = params[:filter_by]
+    end
 
     if current_user
       reply = Post.all(selected_subreddit, selected_filter, current_access_token)
@@ -20,6 +22,10 @@ class Api::PostsController < ApplicationController
       request_body = "dir=#{vote_count}&id=t3_#{post_id}&rank=6"
       reply = reddit_service.post(path: "vote", post_body: request_body, token: current_access_token)
 
+    render json: voting_history
+  end
+
+  def color
     render json: voting_history
   end
 

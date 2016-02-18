@@ -1,6 +1,7 @@
 $(document).ready(function(){
   cast_vote('.upvote');
   cast_vote('.downvote');
+  color_all_votes();
 })
 
 var cast_vote = function(class_name){
@@ -26,6 +27,20 @@ var cast_vote = function(class_name){
     });
   })
 }
+
+var color_all_votes = function(){
+  $.ajax({
+     type:"GET",
+     url: "/api/v1/color_votes",
+     success: function(msg) {
+       color_votes(msg);
+     },
+     error: function(something, msg){
+        alert(msg)
+     }
+  });
+}
+
 
 var color_votes = function(msg){
   for (var property in msg) {

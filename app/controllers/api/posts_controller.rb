@@ -11,4 +11,15 @@ class Api::PostsController < ApplicationController
 
     render json: reply
   end
+
+  def update
+    post_id = "t3_" + params["post_id"]
+    vote_count = params["vote_count"].to_i
+    post_body = "dir=#{vote_count}&id=#{post_id}&rank=6"
+
+    unparsed = reddit_service.post(path: "vote", post_body: post_body, token: current_access_token)
+    reply = JSON.parse(unparsed)
+
+    render json: reply
+  end
 end

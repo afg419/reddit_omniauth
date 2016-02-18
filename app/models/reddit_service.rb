@@ -27,4 +27,14 @@ class RedditService
     }
     res.body
   end
+
+  def post(url:"https://oauth.reddit.com/api/", path: path, token: token, post_body: "")
+    uri = URI(url + path + "/")
+    req = Net::HTTP::Post.new(uri, "Authorization" => "bearer #{token}")
+    req.body = post_body
+    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") {|http|
+      http.request(req)
+    }
+    res.body
+  end
 end

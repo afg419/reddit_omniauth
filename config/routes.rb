@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   namespace 'api', path: '/api/v1' do
     get '/posts/r/:subreddit/:filter_by', to: 'posts#index'
+    get '/vote/:post_id/:vote_count', to: 'posts#update'
   end
 end
 

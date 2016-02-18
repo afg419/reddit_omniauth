@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   def create
     if params["code"]
       reply = JSON.parse(reddit_service.o_authenticate_with_reddit(params["code"]))
-      binding.pry
       if session[:user_token] = reply["access_token"]
         user = User.find_or_create_by_auth(user_info_from_api.merge(reply))
         session[:name] = user.name

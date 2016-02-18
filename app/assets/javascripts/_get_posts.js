@@ -24,7 +24,7 @@ var render_to_posts_page = function(json_reply, title){
     $("#json-posts").append(
       "<div class='jumbotron'>" +
       "<h3>" + post.title + "</h3>" +
-      "<h4>" +   "<a class='" + "upvote" + " " + post.id +  "'>^^^</a> <a class='" + "downvote" + " " + post.id +  "'>vvv</a> Upvotes:" + post.ups + "</h4>" +
+      "<h4>" +   "<a class='" + "upvote" + " " + post.id +  " " + "btn'>^^^</a> <a class='" + "downvote" + " " + post.id +  " " + "btn'>vvv</a> Upvotes:" + post.ups + "</h4>" +
       "<p>submitted by " + post.author + "to r/" + post.subreddit +"</p>" +
       "<p>Comments: " + post.num_comments + "</p>" +
       "</div>"

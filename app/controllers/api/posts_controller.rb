@@ -13,6 +13,7 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+    binding.pry
     post_id = "t3_" + params["post_id"]
     vote_count = params["vote_count"].to_i
     post_body = "dir=#{vote_count}&id=#{post_id}&rank=6"

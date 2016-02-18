@@ -12,3 +12,4 @@ end
 
 #add upvote and downvote links, send ajax requests to reddit with up and downvotes.  should
 # update your page with some new css stuff.  If we refresh the new arrow color stays.
+#POST /api/votevote

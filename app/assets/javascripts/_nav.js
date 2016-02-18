@@ -38,7 +38,7 @@ var render_to_posts_page = function(json_reply, title){
       "<div class='jumbotron'>" +
       "<h3>" + post.title + "</h3>" +
       "<h4>Upvotes: " + post.ups + "</h4>" +
-      "<p>submitted by" + post.author + "to r/" + post.subreddit +"</p>" +
+      "<p>submitted by " + post.author + "to r/" + post.subreddit +"</p>" +
       "<p>Comments: " + post.num_comments + "</p>" +
       "</div>"
     )

@@ -7,10 +7,20 @@ class ApplicationController < ActionController::Base
                 :current_username,
                 :user_info_from_api,
                 :reddit_service,
-                :current_access_token
+                :current_access_token,
+                :selected_subreddit,
+                :selected_filter
 
   def reddit_service
     @service ||= RedditService.new
+  end
+
+  def selected_subreddit
+    session[:selected_subreddit] ||= "all"
+  end
+
+  def selected_filter
+    session[:selected_filter] ||= "top"
   end
 
   def current_user

@@ -1,6 +1,7 @@
 <h1 class="center">REDDIT CLONE AGHHHHH</h1>
 
 <div id="standard-posts" class="container">
+  <h2> <%= selected_subreddit %>/<%= selected_filter %> </h2>
   <% @all.each do |post| %>
     <div class="jumbotron">
       <h3><%= post.title %></h3>

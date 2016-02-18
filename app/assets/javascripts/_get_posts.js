@@ -1,3 +1,5 @@
+
+
 var get_posts = function(class_name, subreddit ,filter_by){
   $(class_name).click(function(){
     $.ajax({
@@ -5,6 +7,8 @@ var get_posts = function(class_name, subreddit ,filter_by){
        url: "/api/v1/posts/r/" + subreddit + "/" + filter_by,
        success: function(msg) {
          render_to_posts_page(msg, subreddit + "/" + filter_by)
+         cast_vote('.upvote');
+         cast_vote('.downvote');
        },
        error: function(something, msg){
           alert(msg)

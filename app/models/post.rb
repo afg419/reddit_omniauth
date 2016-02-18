@@ -8,7 +8,6 @@ class Post
     posts = JSON.parse(reddit_service.get(url: "https://oauth.reddit.com/",
                              path: "r/#{subreddit}/#{filter_by}",
                             token: access_token))
-
     posts["data"]["children"].map do |post_json|
       build_post(post_json["data"])
     end
@@ -26,5 +25,4 @@ private
   def self.build_post(post_params)
     OpenStruct.new(post_params)
   end
-
 end

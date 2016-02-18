@@ -7,7 +7,6 @@ class PrivateMessagesController < ApplicationController
       end
     else
       @messages = PrivateMessage.all("inbox", current_access_token)
-      @from_log_in_nav = true
     end
   end
 

@@ -1,18 +1,26 @@
-<h1>REDDIT CLONE AGHHHHH</h1>
+<h1 class="center">REDDIT CLONE AGHHHHH</h1>
 
-<% @all.each do |post| %>
-  <h3><%= post.title %></h3>
-  <h4>UpVotes: <%= post.ups %></h4>
-  <p>
-    submitted by <%= post.author %> to   <%= post.subreddit %>
-  </p>
-  <p>
-    <span><%= post.num_comments %></span>
-    <span>share</span>
-    <span>save</span>
-    <span>hide</span>
-    <span>report</span>
-  </p>
-  <% post.permalink %><br>
-  <% post.url %><br>
-<% end %>
+<div id="standard-posts" class="container">
+  <% @all.each do |post| %>
+    <div class="jumbotron">
+      <h3><%= post.title %></h3>
+      <h4>UpVotes: <%= post.ups %></h4>
+      <p>
+        submitted by <%= post.author %> to <%= post.subreddit %>
+      </p>
+      <p>
+        <span><%= post.num_comments %></span>
+        <span>share</span>
+        <span>save</span>
+        <span>hide</span>
+        <span>report</span>
+      </p>
+      <% post.permalink %><br>
+      <% post.url %><br>
+    </div>
+  <% end %>
+</div>
+
+<div id="json-posts" class="container">
+
+</div>

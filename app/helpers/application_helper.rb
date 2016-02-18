@@ -13,8 +13,10 @@ module ApplicationHelper
   end
 
   def current_navbar
+    #this weird method takes in [controller][current_user?], cause who needs case statements?
     {
-      "home" => {true => "logged_in_nav.html.erb", false => "logged_out_nav.html.erb"},
+      "home" => {true => "logged_in_nav.html.erb",
+                false => "logged_out_nav.html.erb"},
       "private_messages" => {true => "pm_nav.html.erb"}
     }
   end

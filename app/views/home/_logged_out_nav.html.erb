@@ -1,10 +1,10 @@
 <ul class="nav nav-tabs">
-  <li> <%= @sub.capitalize %> </li>
-  <li role="presentation" class="active"><a href="#">Top</a></li>
-  <li role="presentation"><a href="#">New</a></li>
-  <li role="presentation"><a href="#">Rising</a></li>
-  <li role="presentation"><a href="#">Controversial</a></li>
-  <li role="presentation"><a href="#">Hot</a></li>
-  <li role="presentation"><a href="#">Gilded</a></li>
+  <li> <%= "all".capitalize %> </li>
+  <li role="presentation" class="active"><%= link_to "top", "#", class: "unlog-top" %></li>
+  <li role="presentation"><%= link_to "new", "#", class: "unlog-new" %></li>
+  <li role="presentation"><%= link_to "rising", "#", class: "unlog-rising" %></li>
+  <li role="presentation"><%= link_to "controversial", "#", class: "unlog-controversial" %></li>
+  <li role="presentation"><%= link_to "hot", "#", class: "unlog-hot" %></li>
+  <li role="presentation"><%= link_to "gilded", "#", class: "unlog-gilded" %></li>
   <li role="presentation"><%= login_or_logout_link %></li>
 </ul>

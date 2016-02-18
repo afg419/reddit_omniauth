@@ -1,10 +1,4 @@
 class HomeController < ApplicationController
-  before_action :subreddit_all
-
-  def subreddit_all
-    @sub = "all"
-  end
-
   def index
     if current_user
       @all = Post.all("all", "top", current_access_token)

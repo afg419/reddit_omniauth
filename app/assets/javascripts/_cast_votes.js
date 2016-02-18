@@ -6,29 +6,38 @@ $(document).ready(function(){
 var cast_vote = function(class_name){
   $(class_name).click(function(){
     post_id = this.classList[1]
-    class_name = class_name
     var vote_count = 0
-    color = ""
 
     if (class_name == ".upvote"){
       vote_count = 1
-      color = 'orange'
-      $(".downvote" + "." + post_id).removeClass('purple')
     } else {
       vote_count = -1
-      color = 'purple'
-      $(".upvote" + "." + post_id).removeClass('orange')
     }
 
     $.ajax({
        type:"GET",
        url: "/api/v1/vote/" + post_id + "/" + vote_count,
        success: function(msg) {
-         $(class_name + "." + post_id).toggleClass(color)
+         color_votes(msg);
        },
        error: function(something, msg){
           alert(msg)
        }
     });
   })
+}
+
+var color_votes = function(msg){
+  for (var property in msg) {
+      if (msg.hasOwnProperty(property)) {
+        $(".upvote" + "." + property).removeClass('orange')
+        $(".downvote" + "." + property).removeClass('purple')
+
+        if (msg[property] == 1){
+          $(".upvote" + "." + property).addClass('orange')
+        } else if (msg[property] == -1){
+          $(".downvote" + "." + property).addClass('purple')
+        }
+      }
+  }
 }

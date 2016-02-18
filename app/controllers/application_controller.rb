@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
                 :reddit_service,
                 :current_access_token,
                 :selected_subreddit,
-                :selected_filter
+                :selected_filter,
+                :voting_history
 
   def reddit_service
     @service ||= RedditService.new
@@ -29,6 +30,10 @@ class ApplicationController < ActionController::Base
 
   def current_access_token
     session[:user_token]
+  end
+
+  def voting_history
+    session[:voted] ||= {}
   end
 
   def user_info_from_api

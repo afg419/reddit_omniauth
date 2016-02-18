@@ -13,13 +13,23 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    post_id = "t3_" + params["post_id"]
-    vote_count = params["vote_count"].to_i
-    post_body = "dir=#{vote_count}&id=#{post_id}&rank=6"
+      post_id = params["post_id"]
+      update_vote_history(post_id, params["vote_count"].to_i)
+      vote_count = voting_history[post_id]
 
-    unparsed = reddit_service.post(path: "vote", post_body: post_body, token: current_access_token)
-    reply = JSON.parse(unparsed)
+      request_body = "dir=#{vote_count}&id=t3_#{post_id}&rank=6"
+      reply = reddit_service.post(path: "vote", post_body: request_body, token: current_access_token)
 
-    render json: reply
+    render json: voting_history
+  end
+
+  private
+
+  def update_vote_history(post_id, vote_count)
+    if voting_history[post_id] == vote_count
+      voting_history[post_id] = 0
+    else
+      voting_history[post_id] = vote_count
+    end
   end
 end

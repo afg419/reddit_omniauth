@@ -1,5 +1,3 @@
-
-
 var get_posts = function(class_name, subreddit ,filter_by){
   $(class_name).click(function(){
     $.ajax({

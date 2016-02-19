@@ -1,3 +1,11 @@
+var prepare_votes = function(){
+  cast_vote('.upvote');
+  cast_vote('.downvote');
+  color_all_votes();
+}
+
+// When clicking on a homepage tab, the following is called
+
 var get_posts = function(class_name, subreddit ,filter_by){
   $(class_name).click(function(){
     $.ajax({
@@ -5,9 +13,7 @@ var get_posts = function(class_name, subreddit ,filter_by){
        url: "/api/v1/posts/r/" + subreddit + "/" + filter_by,
        success: function(msg) {
          render_to_posts_page(msg, subreddit + "/" + filter_by)
-         cast_vote('.upvote');
-         cast_vote('.downvote');
-         color_all_votes();
+         prepare_votes();
        },
        error: function(something, msg){
           alert(msg)
@@ -16,21 +22,23 @@ var get_posts = function(class_name, subreddit ,filter_by){
   })
 }
 
+// When refreshing, the following is called
+
 var get_posts_from_current_subreddit = function(){
   $.ajax({
      type:"GET",
      url: "/api/v1/posts/r/" + "render" + "/" + "posts",
      success: function(msg) {
-       render_to_posts_page(msg, "hey" + "/" + "works")
-       cast_vote('.upvote');
-       cast_vote('.downvote');
-       color_all_votes();
+       render_to_posts_page(msg, "hey" + "/" + "works");
+       prepare_votes();
      },
      error: function(something, msg){
         alert(msg)
      }
   });
 }
+
+// this renders the new content to page
 
 var render_to_posts_page = function(json_reply, title){
   $("#json-posts").empty();

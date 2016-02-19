@@ -9,6 +9,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'pg'
+gem 'clockwork'
+gem 'stalker'
 
 group :development, :test do
   gem 'mocha'

@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://oauth.reddit.com/api/vote/
+    body:
+      encoding: UTF-8
+      string: dir=1&id=t3_46i27j&rank=6
+    headers:
+      Authorization:
+      - bearer 52329580-2hg-4itv1k-B_nYZwD6Vmv65axE
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - oauth.reddit.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Fri, 19 Feb 2016 16:58:19 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dff3259e7f14dda0b6f00b573079d60e71455901099; expires=Sat, 18-Feb-17
+        16:58:19 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Expires:
+      - "-1"
+      Cache-Control:
+      - max-age=0, must-revalidate
+      - private, s-maxage=0, max-age=0, must-revalidate
+      X-Ratelimit-Remaining:
+      - '595.0'
+      X-Ratelimit-Used:
+      - '5'
+      X-Ratelimit-Reset:
+      - '101'
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Ray:
+      - 2773840e108b252b-ORD
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 16:58:19 GMT
+recorded_with: VCR 3.0.1

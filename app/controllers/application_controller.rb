@@ -10,10 +10,15 @@ class ApplicationController < ActionController::Base
                 :current_access_token,
                 :selected_subreddit,
                 :selected_filter,
-                :voting_history
+                :voting_history,
+                :selected_mailbox
 
   def reddit_service
     @service ||= RedditService.new
+  end
+
+  def selected_mailbox
+    session[:mail]
   end
 
   def selected_subreddit

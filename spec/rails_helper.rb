@@ -7,14 +7,22 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'vcr'
 require 'simplecov'
+require 'capybara/rspec'
+require 'capybara/rails'
 
 SimpleCov.start "rails"
-
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
+  def i_need_javascript
+   initial_driver = Capybara.current_driver
+   Capybara.current_driver = Capybara.javascript_driver
+    yield
+    ensure
+   Capybara.current_driver = initial_driver
+  end
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

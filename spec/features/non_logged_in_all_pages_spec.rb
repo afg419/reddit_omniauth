@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "NonLoggedInAllPages", type: :feature do
   scenario "root page displays default all page" do
-    VCR.use_cassette("non-logged in all") do
+    VCR.use_cassette("non-logged_in_all") do
       visit root_path
       within('.nav') do
         expect(page).to have_content("All")

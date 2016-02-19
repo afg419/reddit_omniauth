@@ -1,19 +1,13 @@
 class PrivateMessagesController < ApplicationController
   def index
-    if params[:mail]
-      @messages = PrivateMessage.all(params[:mail], current_access_token)
+    session[:mail] = params[:mail]
+    if selected_mailbox
+      @messages = PrivateMessage.all(selected_mailbox, current_access_token)
       respond_to do |format|
         format.js
       end
     else
       @messages = PrivateMessage.all("inbox", current_access_token)
-    end
-  end
-
-  def new
-    binding.pry
-    respond_to do |format|
-      format.js
     end
   end
 end

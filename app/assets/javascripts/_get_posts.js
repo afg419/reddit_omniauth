@@ -4,29 +4,15 @@ var prepare_votes = function(){
   color_all_votes();
 }
 
-var get_posts_by_filter = function(class_name, filter_by){
-  $(class_name).click(function(){
-    $.ajax({
-       type:"GET",
-       url: "/api/v1/posts/r/?filter_by=" + filter_by,
-       success: function(msg) {
-         render_to_posts_page(msg, "/" + filter_by)
-         prepare_votes();
-       },
-       error: function(something, msg){
-          alert(msg)
-       }
-    });
-  })
-}
+//called when tab clicked
 
-var get_posts_by_subreddit = function(class_name, subreddit){
+var get_posts = function(class_name, selected, type){
   $(class_name).click(function(){
     $.ajax({
        type:"GET",
-       url: "/api/v1/posts/r/?subreddit=" + subreddit,
+       url: "/api/v1/posts/r/?"+type+"=" + selected,
        success: function(msg) {
-         render_to_posts_page(msg, subreddit + "/")
+         render_to_posts_page(msg)
          prepare_votes();
        },
        error: function(something, msg){
@@ -43,7 +29,7 @@ var get_posts_on_refresh = function(){
      type:"GET",
      url: "/api/v1/posts/r/",
      success: function(msg) {
-       render_to_posts_page(msg, "hey" + "/" + "works");
+       render_to_posts_page(msg);
        prepare_votes();
      },
      error: function(something, msg){
@@ -55,9 +41,9 @@ var get_posts_on_refresh = function(){
 // this renders the new content to page
 
 var render_to_posts_page = function(json_reply){
-  title = ""
+
   $.getJSON( "/api/v1/posts/title", function(msg) {
-    title = "" + msg.subreddit + "/" + msg.filter
+    var title = "" + msg.subreddit + "/" + msg.filter
     $("#json-posts").prepend(
       "<h2>" + title + "</h2>"
     );

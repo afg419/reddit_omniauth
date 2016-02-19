@@ -7,12 +7,13 @@ RSpec.feature "LoggedInAllPages", type: :feature do
     VCR.use_cassette 'posts-all-top' do
       visit root_path
       sleep(0.25)
-      within('.nav') do
+      within('.filter') do
         expect(page).to have_content("hot")
         expect(page).to have_content("new")
         expect(page).to have_content("controversial")
         expect(page).to have_content("top")
       end
+      expect(page).to have_content("all/top")
       expect(page).to have_content("Friends pranked me by converting my bedroom to a utility closet.")
       expect(page).to have_content("sal_marinto r/funny")
       expect(page).to have_content("Comments: 1307")    end
@@ -25,12 +26,13 @@ RSpec.feature "LoggedInAllPages", type: :feature do
     VCR.use_cassette 'posts-all-new' do
       visit root_path
       sleep(0.25)
-      within('.nav') do
+      within('.filter') do
         expect(page).to have_content("hot")
         expect(page).to have_content("new")
         expect(page).to have_content("controversial")
         expect(page).to have_content("top")
       end
+      expect(page).to have_content("all/new")
       expect(page).to have_content("Friends pranked me by converting my bedroom to a utility closet.")
       expect(page).to have_content("sal_marinto r/funny")
       expect(page).to have_content("Comments: 1307")    end

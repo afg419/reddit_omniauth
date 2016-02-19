@@ -20,16 +20,16 @@ $(document).ready(function(){
     $(this).tab('show');
   })
 
-  get_posts_by_filter('.nav-top','top');
-  get_posts_by_filter('.nav-new','new');
-  get_posts_by_filter('.nav-rising','rising');
-  get_posts_by_filter('.nav-controversial','controversial');
-  get_posts_by_filter('.nav-hot','hot');
-  get_posts_by_filter('.nav-gilded','gilded');
-  get_posts_by_subreddit('.sub-all' , "all")
+  get_posts('.nav-top','top', "filter_by");
+  get_posts('.nav-new','new', "filter_by");
+  get_posts('.nav-rising','rising', "filter_by");
+  get_posts('.nav-controversial','controversial', "filter_by");
+  get_posts('.nav-hot','hot', "filter_by");
+  get_posts('.nav-gilded','gilded', "filter_by");
+  get_posts('.sub-all' , "all", "subreddit")
 
   for(i = 0; i < default_subreddits.length; i++){
-    get_posts_by_subreddit('.sub-' + default_subreddits[i] , default_subreddits[i])
+    get_posts('.sub-' + default_subreddits[i] , default_subreddits[i], "subreddit")
   }
 
 get_posts_on_refresh();

@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://oauth.reddit.com/api/vote/
+    body:
+      encoding: UTF-8
+      string: dir=1&id=t3_46i27j&rank=6
+    headers:
+      Authorization:
+      - bearer
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - oauth.reddit.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Fri, 19 Feb 2016 18:50:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=def1359e7fa97ca13e9a3d22c673cfe361455907828; expires=Sat, 18-Feb-17
+        18:50:28 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - max-age=0, must-revalidate
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Ray:
+      - 27742855ecbb09a0-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jquery": [[0, 1, "refresh", []], [0, 2, "attr", "find"], [2, 3, "call",
+        [".error.USER_REQUIRED"]], [3, 4, "attr", "show"], [4, 5, "call", []], [5,
+        6, "attr", "text"], [6, 7, "call", ["Please log in to do that."]], [7, 8,
+        "attr", "end"], [8, 9, "call", []]]}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 18:50:28 GMT
+- request:
+    method: post
+    uri: https://oauth.reddit.com/api/vote/
+    body:
+      encoding: UTF-8
+      string: dir=-1&id=t3_46i27j&rank=6
+    headers:
+      Authorization:
+      - bearer
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - oauth.reddit.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Fri, 19 Feb 2016 18:50:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2f2efb7be6b2b0f63a197199b8deba1d1455907828; expires=Sat, 18-Feb-17
+        18:50:28 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - max-age=0, must-revalidate
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Ray:
+      - 27742857f264109f-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jquery": [[0, 1, "refresh", []], [0, 2, "attr", "find"], [2, 3, "call",
+        [".error.USER_REQUIRED"]], [3, 4, "attr", "show"], [4, 5, "call", []], [5,
+        6, "attr", "text"], [6, 7, "call", ["Please log in to do that."]], [7, 8,
+        "attr", "end"], [8, 9, "call", []]]}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 18:50:28 GMT
+- request:
+    method: post
+    uri: https://oauth.reddit.com/api/vote/
+    body:
+      encoding: UTF-8
+      string: dir=0&id=t3_46i27j&rank=6
+    headers:
+      Authorization:
+      - bearer
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - oauth.reddit.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Fri, 19 Feb 2016 18:50:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d37d3c5ba54033a8a86ce3bcf314f843e1455907828; expires=Sat, 18-Feb-17
+        18:50:28 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - max-age=0, must-revalidate
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Ray:
+      - 2774285a55ed2543-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jquery": [[0, 1, "refresh", []], [0, 2, "attr", "find"], [2, 3, "call",
+        [".error.USER_REQUIRED"]], [3, 4, "attr", "show"], [4, 5, "call", []], [5,
+        6, "attr", "text"], [6, 7, "call", ["Please log in to do that."]], [7, 8,
+        "attr", "end"], [8, 9, "call", []]]}'
+    http_version: 
+  recorded_at: Fri, 19 Feb 2016 18:50:28 GMT
+recorded_with: VCR 3.0.1

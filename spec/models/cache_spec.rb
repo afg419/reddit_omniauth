@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Cache, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "can hold hashes" do
+    cache = Cache.create(top: {a: "hey"})
+    expect(cache.top).to eq({a: "hey"})
+  end
 end

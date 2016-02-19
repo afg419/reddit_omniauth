@@ -10,7 +10,7 @@
 
   <body>
     <%= render "subreddit_nav.html.erb" if params[:controller] == "home"%>
-    <%= render current_navbar[params[:controller]][current_user?] %>
+    <%= render current_navbar[params[:controller]][!!current_user] %>
 
     <% flash.each do |key,message|  %>
       <p>

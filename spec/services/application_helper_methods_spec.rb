@@ -21,12 +21,12 @@ describe "These methods are impossible to access without the logging in working"
       ApplicationController.any_instance.stubs(:current_user).returns(false)
       a = ApplicationController.new
 
-      expect(a.current_user?).to eq false
+      expect(!!a.current_user).to eq false
       expect(a.current_navbar["home"][a.current_user]).to eq "logged_out_nav.html.erb"
 
       ApplicationController.any_instance.stubs(:current_user).returns(true)
 
-      expect(a.current_user?).to eq true
+      expect(!!a.current_user).to eq true
       expect(a.current_navbar["home"][a.current_user]).to eq "logged_in_nav.html.erb"
       expect(a.current_navbar["private_messages"][a.current_user]).to eq "pm_nav.html.erb"
     end

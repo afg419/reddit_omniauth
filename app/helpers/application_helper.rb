@@ -8,10 +8,6 @@ module ApplicationHelper
     end
   end
 
-  def current_user?
-    !!current_user
-  end
-
   def current_navbar
     {
       "home" => {true => "logged_in_nav.html.erb",
@@ -21,55 +17,6 @@ module ApplicationHelper
   end
 
   def default_subreddits
-    ["askreddit",
-     "funny",
-     "pics",
-     "videos",
-     "todayilearned",
-     "news",
-     "gaming",
-     "worldnews",
-     "gifs",
-     "showerthoughts",
-     "aww",
-     "movies",
-     "explainlikeimfive",
-     "iama",
-     "science",
-     "mildlyinteresting",
-     "tifu",
-     "nottheonion",
-     "television",
-     "jokes",
-     "dataisbeautiful",
-     "twoxchromosomes",
-     "futurology",
-     "fitness",
-     "lifeprotips",
-     "oldschoolcool",
-     "photoshopbattles",
-     "music",
-     "earthporn",
-     "sports",
-     "food",
-     "books",
-     "space",
-     "creepy",
-     "askscience",
-     "personalfinance",
-     "upliftingnews",
-     "diy",
-     "writingprompts",
-     "nosleep",
-     "art",
-     "gadgets",
-     "documentaries",
-     "history",
-     "getmotivated",
-     "listentothis",
-     "internetisbeautiful",
-     "philosophy",
-     "announcements",
-     "blog"]
+    ["askreddit","funny","pics","videos","todayilearned","news","gaming","worldnews","gifs","showerthoughts","aww","movies","explainlikeimfive","iama","science","mildlyinteresting","tifu","nottheonion","television","jokes","dataisbeautiful","twoxchromosomes","futurology","fitness","lifeprotips","oldschoolcool","photoshopbattles","music","earthporn","sports","food","books","space","creepy","askscience","personalfinance","upliftingnews","diy","writingprompts","nosleep","art","gadgets","documentaries","history","getmotivated","listentothis","internetisbeautiful","philosophy","announcements", "blog"]
   end
 end

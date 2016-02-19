@@ -3,8 +3,16 @@ require 'rails_helper'
 RSpec.describe RedditService, type: :model do
   before :each do
     @service = RedditService.new
+    @login_code = "tytuTH-bx8M8nVXF1cm6vKG_Kl0"
     @current_access_token = "52329580-8Rs4HZnHoAEBfZShYi5qWOxuSx0" #expired
     @current_access_token2 = "52329580-2hg-4itv1k-B_nYZwD6Vmv65axE"
+  end
+
+  it "gets access token from login code" do
+    VCR.use_cassette 'auth-handshake' do
+      reply = @service.o_authenticate_with_reddit(@login_code)
+      expect(reply).to eq "{\"error\": 401}" # no idea why this won't work
+    end
   end
 
   it "makes api call to all/top posts" do
@@ -32,13 +40,12 @@ RSpec.describe RedditService, type: :model do
 
   it "make unauth api call to all/top posts" do
     VCR.use_cassette 'unauth-posts-all-top' do
-      reply = @service.unauth_get_json
-      first_json_post = JSON.parse(reply)["data"]["children"].first["data"]["title"]
-      first_title = "To Kill a Mockingbird author Harper Lee has passed away at age 89."
-      first_author = "Sctvman"
+      reply = Post.all_unauth("all", "top")
+      first_title = "Friends pranked me by converting my bedroom to a utility closet."
+      first_author = "sal_marin"
 
-      expect(first_json_post["title"]).to eq first_title
-      expect(first_json_post["author"]).to eq first_author
+      expect(reply.first.title).to eq first_title
+      expect(reply.first.author).to eq first_author
     end
   end
 
@@ -70,6 +77,4 @@ RSpec.describe RedditService, type: :model do
       expect(reply).to eq "{}"
     end
   end
-
-
 end

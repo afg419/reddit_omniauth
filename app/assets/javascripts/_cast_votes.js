@@ -1,9 +1,3 @@
-$(document).ready(function(){
-  cast_vote('.upvote');
-  cast_vote('.downvote');
-  color_all_votes();
-})
-
 var cast_vote = function(class_name){
   $(class_name).click(function(){
     post_id = this.classList[1]

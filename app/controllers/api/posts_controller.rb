@@ -5,22 +5,22 @@ class Api::PostsController < ApplicationController
       session[:selected_filter] = params[:filter_by]
     end
 
-    if current_user
-      reply = Post.all(selected_subreddit, selected_filter, current_access_token)
-    else
-      reply = Post.all_unauth(selected_subreddit, selected_filter)
+    if selected_subreddit == "all"
+      reply = Cache.last.send(selected_filter)
     end
 
     render json: reply
   end
 
   def update
+    if current_user
       post_id = params["post_id"]
       update_vote_history(post_id, params["vote_count"].to_i)
       vote_count = voting_history[post_id]
 
       request_body = "dir=#{vote_count}&id=t3_#{post_id}&rank=6"
       reply = reddit_service.post(path: "vote", post_body: request_body, token: current_access_token)
+    end
 
     render json: voting_history
   end

@@ -7,12 +7,9 @@ $(document).ready(function(){
 var cast_vote = function(class_name){
   $(class_name).click(function(){
     post_id = this.classList[1]
-    var vote_count = 0
-
+    var vote_count = -1
     if (class_name == ".upvote"){
       vote_count = 1
-    } else {
-      vote_count = -1
     }
 
     $.ajax({
@@ -28,6 +25,8 @@ var cast_vote = function(class_name){
   })
 }
 
+// This is used to color votes on page refresh or coming from another tab
+
 var color_all_votes = function(){
   $.ajax({
      type:"GET",
@@ -41,6 +40,7 @@ var color_all_votes = function(){
   });
 }
 
+// This colors the votes found in message
 
 var color_votes = function(msg){
   for (var property in msg) {

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :private_messages, only: [:index, :new, :create]
 
   namespace 'api', path: '/api/v1' do
-    get '/posts/r/:subreddit/:filter_by', to: 'posts#index'
+    get '/posts/r/', to: 'posts#index'
     get '/vote/:post_id/:vote_count', to: 'posts#update'
     get '/color_votes', to: 'posts#color'
   end

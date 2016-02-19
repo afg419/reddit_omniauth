@@ -20,14 +20,19 @@ $(document).ready(function(){
     $(this).tab('show');
   })
 
-  get_posts('.nav-top','all', 'top');
-  get_posts('.nav-new','all', 'new');
-  get_posts('.nav-rising','all', 'rising');
-  get_posts('.nav-controversial','all', 'controversial');
-  get_posts('.nav-hot','all', 'hot');
-  get_posts('.nav-gilded','all', 'gilded');
-  get_posts_from_current_subreddit();
-  cast_vote('.upvote');
+  get_posts_by_filter('.nav-top','top');
+  get_posts_by_filter('.nav-new','new');
+  get_posts_by_filter('.nav-rising','rising');
+  get_posts_by_filter('.nav-controversial','controversial');
+  get_posts_by_filter('.nav-hot','hot');
+  get_posts_by_filter('.nav-gilded','gilded');
+  get_posts_by_subreddit('.sub-all' , "all")
+
+  for(i = 0; i < default_subreddits.length; i++){
+    get_posts_by_subreddit('.sub-' + default_subreddits[i] , default_subreddits[i])
+  }
+
+get_posts_on_refresh();
   cast_vote('.downvote');
   color_all_votes();
 })

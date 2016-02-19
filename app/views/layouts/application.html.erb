@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></head>
 
   <body>
-
+    <%= render "subreddit_nav.html.erb" %>
     <%= render current_navbar[params[:controller]][current_user?] %>
 
     <% flash.each do |key,message|  %>

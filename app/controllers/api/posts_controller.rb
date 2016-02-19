@@ -1,16 +1,17 @@
 class Api::PostsController < ApplicationController
+
   def index
-    unless params[:subreddit] == "render"
-      session[:selected_subreddit] = params[:subreddit]
-      session[:selected_filter] = params[:filter_by]
-    end
+    session[:selected_filter] = params[:filter_by] if params[:filter_by]
+    session[:selected_subreddit] = params[:subreddit] if params[:subreddit]
 
     if selected_subreddit == "all"
       reply = Cache.last.send(selected_filter)
+    else
+      reply = Post.all_unauth(selected_subreddit, selected_filter)
     end
-
     render json: reply
   end
+
 
   def update
     if current_user

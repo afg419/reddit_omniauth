@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
                 :selected_filter,
                 :voting_history,
                 :selected_mailbox
-
+                
   def reddit_service
     @service ||= RedditService.new
   end

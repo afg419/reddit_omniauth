@@ -4,15 +4,13 @@ var prepare_votes = function(){
   color_all_votes();
 }
 
-// When clicking on a homepage tab, the following is called
-
-var get_posts = function(class_name, subreddit ,filter_by){
+var get_posts_by_filter = function(class_name, filter_by){
   $(class_name).click(function(){
     $.ajax({
        type:"GET",
-       url: "/api/v1/posts/r/" + subreddit + "/" + filter_by,
+       url: "/api/v1/posts/r/?filter_by=" + filter_by,
        success: function(msg) {
-         render_to_posts_page(msg, subreddit + "/" + filter_by)
+         render_to_posts_page(msg, "/" + filter_by)
          prepare_votes();
        },
        error: function(something, msg){
@@ -22,12 +20,45 @@ var get_posts = function(class_name, subreddit ,filter_by){
   })
 }
 
+var get_posts_by_subreddit = function(class_name, subreddit){
+  $(class_name).click(function(){
+    $.ajax({
+       type:"GET",
+       url: "/api/v1/posts/r/?subreddit=" + subreddit,
+       success: function(msg) {
+         render_to_posts_page(msg, subreddit + "/")
+         prepare_votes();
+       },
+       error: function(something, msg){
+          alert(msg)
+       }
+    });
+  })
+}
+
+
+// var get_posts = function(class_name, subreddit ,filter_by){
+//   $(class_name).click(function(){
+//     $.ajax({
+//        type:"GET",
+//        url: "/api/v1/posts/r/" + subreddit + "/" + filter_by,
+//        success: function(msg) {
+//          render_to_posts_page(msg, subreddit + "/" + filter_by)
+//          prepare_votes();
+//        },
+//        error: function(something, msg){
+//           alert(msg)
+//        }
+//     });
+//   })
+// }
+
 // When refreshing, the following is called
 
-var get_posts_from_current_subreddit = function(){
+var get_posts_on_refresh = function(){
   $.ajax({
      type:"GET",
-     url: "/api/v1/posts/r/" + "render" + "/" + "posts",
+     url: "/api/v1/posts/r/",
      success: function(msg) {
        render_to_posts_page(msg, "hey" + "/" + "works");
        prepare_votes();

@@ -30,6 +30,11 @@ class Api::PostsController < ApplicationController
     render json: voting_history
   end
 
+  def title
+    title = {subreddit: selected_subreddit, filter: selected_filter}
+    render json: title
+  end
+
   private
 
   def update_vote_history(post_id, vote_count)

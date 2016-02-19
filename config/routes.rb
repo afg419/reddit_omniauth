@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   namespace 'api', path: '/api/v1' do
     get '/posts/r/', to: 'posts#index'
+    get '/posts/title/', to: 'posts#title'
     get '/vote/:post_id/:vote_count', to: 'posts#update'
     get '/color_votes', to: 'posts#color'
   end

@@ -36,23 +36,6 @@ var get_posts_by_subreddit = function(class_name, subreddit){
   })
 }
 
-
-// var get_posts = function(class_name, subreddit ,filter_by){
-//   $(class_name).click(function(){
-//     $.ajax({
-//        type:"GET",
-//        url: "/api/v1/posts/r/" + subreddit + "/" + filter_by,
-//        success: function(msg) {
-//          render_to_posts_page(msg, subreddit + "/" + filter_by)
-//          prepare_votes();
-//        },
-//        error: function(something, msg){
-//           alert(msg)
-//        }
-//     });
-//   })
-// }
-
 // When refreshing, the following is called
 
 var get_posts_on_refresh = function(){
@@ -71,11 +54,16 @@ var get_posts_on_refresh = function(){
 
 // this renders the new content to page
 
-var render_to_posts_page = function(json_reply, title){
+var render_to_posts_page = function(json_reply){
+  title = ""
+  $.getJSON( "/api/v1/posts/title", function(msg) {
+    title = "" + msg.subreddit + "/" + msg.filter
+    $("#json-posts").prepend(
+      "<h2>" + title + "</h2>"
+    );
+  });
   $("#json-posts").empty();
-  $("#json-posts").append(
-    "<h2>" + title + "</h2>"
-  );
+
   for (i=0; i< json_reply.length; i++){
     var post = json_reply[i].table
     $("#json-posts").append(
